@@ -287,7 +287,7 @@ async def vsong(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"**📥 Download** `{urlissed}`", quote=True,
+            f"**📥 Download** `{urlissed}`",
             file_stark,
         ),
     )
