@@ -69,7 +69,7 @@ async def song(client, message: Message):
 """
     file_stark = f"{ytdl_data['id']}.mp3"
     await client.send_audio(
-        message.chat.id,
+        message.chat.id, reply_to_message_id=message.reply_to_message.message_id,
         audio=open(file_stark, "rb"),
         duration=int(ytdl_data["duration"]),
         title=str(ytdl_data["title"]),
@@ -276,7 +276,7 @@ async def vsong(client, message: Message):
 **🏷️ Video :** [{thum}]({mo})
 """
     await client.send_video(
-        message.chat.id,
+        message.chat.id, reply_to_message_id=message.reply_to_message.message_id,
         video=open(file_stark, "rb"),
         duration=int(ytdl_data["duration"]),
         file_name=str(ytdl_data["title"]),
