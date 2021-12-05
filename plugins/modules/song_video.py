@@ -26,7 +26,7 @@ async def song(client, message: Message):
             "⚠️Check spelling!",
         )
         return
-    pablo = await client.send_message(message.chat.id, f"**🔎 Searching** `{urlissed}`", reply_to_message_id=message.reply_to_message.message_id, quote=True)
+    pablo = await client.send_message(message.chat.id, f"**🔎 Searching** `{urlissed}`", quote=True)
     search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
     mi = search.result()
     mio = mi["search_result"]
@@ -69,7 +69,7 @@ async def song(client, message: Message):
 """
     file_stark = f"{ytdl_data['id']}.mp3"
     await client.send_audio(
-        message.chat.id, reply_to_message_id=message.reply_to_message.message_id, quote=True,
+        message.chat.id, quote=True,
         audio=open(file_stark, "rb"),
         duration=int(ytdl_data["duration"]),
         title=str(ytdl_data["title"]),
@@ -235,7 +235,7 @@ async def vsong(client, message: Message):
     urlissed = get_text(message)
 
     pablo = await client.send_message(
-        message.chat.id, f"**🔎 Searching..** `{urlissed}`", reply_to_message_id=message.reply_to_message.message_id, quote=True
+        message.chat.id, f"**🔎 Searching..** `{urlissed}`", quote=True
     )
     if not urlissed:
         await pablo.edit("Invalid Command Syntax Please Check help Menu To Know More!")
@@ -276,7 +276,7 @@ async def vsong(client, message: Message):
 **🏷️ Video :** [{thum}]({mo})
 """
     await client.send_video(
-        message.chat.id, reply_to_message_id=message.reply_to_message.message_id, quote=True,
+        message.chat.id, quote=True,
         video=open(file_stark, "rb"),
         duration=int(ytdl_data["duration"]),
         file_name=str(ytdl_data["title"]),
@@ -287,7 +287,7 @@ async def vsong(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"**📥 Download** `{urlissed}`",
+            f"**📥 Download** `{urlissed}`", quote=True,
             file_stark,
         ),
     )
