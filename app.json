@@ -1,16 +1,16 @@
 {
     "name": "vc-userbot",
     "description": "A Telegram Userbot to play Songs/Videos/Radio/ Live Stream in Voice Chat",
-    "logo": "https://avatars.githubusercontent.com/u/85742457?s=200&v=4",
+    "logo": "https://telegra.ph/file/26effbfca2917f15a9e5e.png",
     "keywords": [
         "Telegram",
         "VCBot",
         "MusicPlayer"
     ],
-    "repository": "https://github.com/Lost-In-Dark/TG-MusicPlayer",
+    "repository": "https://github.com/lushaimusic/vc-userbot",
     "env": {
         "SESSION": {
-            "description": "Pyrogram String Session",
+            "description": "Pyrogram String Session. Get from https://replit.com/@ZauteKm/GenerateStringSession",
             "required": true
         },
         "API_ID": {
