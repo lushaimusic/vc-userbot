@@ -17,16 +17,17 @@ from yt_dlp import YoutubeDL
 from config import HNDLR
 
 
-@Client.on_message(filters.command(["song", "music"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["song", "music", "mp3"], prefixes=f"{HNDLR}"))
 async def song(client, message: Message):
     urlissed = get_text(message)
+    reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     if not urlissed:
         await client.send_message(
             message.chat.id,
-            "⚠️Check spelling!",
+            f"⚠️ Check spelling!\n\nExample: `{HNDLR}song monody`", reply_to_message_id=reply_id)
         )
         return
-    pablo = await client.send_message(message.chat.id, f"**🔎 Searching** `{urlissed}`", reply_to_message_id=message.message_id)
+    pablo = await client.send_message(message.chat.id, f"**🔎 Searching** `{urlissed}`", reply_to_message_id=reply_id)
     search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
     mi = search.result()
     mio = mi["search_result"]
@@ -69,7 +70,7 @@ async def song(client, message: Message):
 """
     file_stark = f"{ytdl_data['id']}.mp3"
     await client.send_audio(
-        message.chat.id, reply_to_message_id=message.message_id,
+        message.chat.id, reply_to_message_id=reply_id,
         audio=open(file_stark, "rb"),
         duration=int(ytdl_data["duration"]),
         title=str(ytdl_data["title"]),
@@ -230,12 +231,13 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
-@Client.on_message(filters.command(["vsong", "video"], prefixes=f"{HNDLR}"))
+@Client.on_message(filters.command(["vsong", "video", "mp4"], prefixes=f"{HNDLR}"))
 async def vsong(client, message: Message):
     urlissed = get_text(message)
+    reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
 
     pablo = await client.send_message(
-        message.chat.id, f"**🔎 Searching..** `{urlissed}`", reply_to_message_id=message.message_id
+        message.chat.id, f"**🔎 Searching..** `{urlissed}`", reply_to_message_id=reply_id
     )
     if not urlissed:
         await pablo.edit("Invalid Command Syntax Please Check help Menu To Know More!")
@@ -276,7 +278,7 @@ async def vsong(client, message: Message):
 **🏷️ Video :** [{thum}]({mo})
 """
     await client.send_video(
-        message.chat.id, reply_to_message_id=message.message_id,
+        message.chat.id, reply_to_message_id=reply_id,
         video=open(file_stark, "rb"),
         duration=int(ytdl_data["duration"]),
         file_name=str(ytdl_data["title"]),
