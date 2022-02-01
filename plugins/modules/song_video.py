@@ -24,7 +24,7 @@ async def song(client, message: Message):
     if not urlissed:
         await client.send_message(
             message.chat.id,
-            f"⚠️ Check spelling!\n\nExample: `{HNDLR}song monody`", reply_to_message_id=reply_id)
+            f"⚠️ Check spelling!\n\nExample: `{HNDLR}song monody`", reply_to_message_id=reply_id,
         )
         return
     pablo = await client.send_message(message.chat.id, f"**🔎 Searching** `{urlissed}`", reply_to_message_id=reply_id)
