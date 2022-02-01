@@ -48,5 +48,30 @@ async def restart(client, m: Message):
 
 @Client.on_message(contact_filter & filters.command(['help'], prefixes=f"{HNDLR}"))
 async def help(client, m: Message):
-   HELP = f"**HELP MENU 🛠** \n\n**USER COMMANDS** (Anyone can Use if `GROUP_MODE` is set to `True`): \n\n`{HNDLR}play` \n`{HNDLR}vplay` \n`{HNDLR}stream` (For Radio links) \n`{HNDLR}vstream` (For .m3u8 / live links) \n`{HNDLR}playfrom [channel] ; [n]` - Plays last n songs from channel \n`{HNDLR}playlist` / `{HNDLR}queue` \n\n**SUDO COMMANDS** (Can only be accessed by You and Your Contacts): \n`{HNDLR}ping` \n`{HNDLR}skip` \n`{HNDLR}pause` and `{HNDLR}resume` \n`{HNDLR}stop` / `{HNDLR}end` \n`{HNDLR}help` \n`{HNDLR}restart` \n\n**EXTRA COMMANDS** \n`{HNDLR}song` - Download Song from Youtube server. \n`{HNDLR}video` - Download Video from Youtube server. \n`{HNDLR}json` - Reply any message & Showing Json."
-   await m.reply(HELP)
+   HELP = f"""
+**HELP MENU 🛠**
+
+**USER COMMANDS**
+(Anyone can Use if `GROUP_MODE` is set to `True`):
+`{HNDLR}play`
+`{HNDLR}vplay`
+`{HNDLR}stream` (For Radio links)
+`{HNDLR}vstream` (For .m3u8 / live links)
+`{HNDLR}playfrom [channel] ; [n]` - Plays last n songs from channel
+`{HNDLR}playlist` / `{HNDLR}queue`
+
+**SUDO COMMANDS** (Can only be accessed by You and Your Contacts):
+`{HNDLR}ping`
+`{HNDLR}skip`
+`{HNDLR}pause` and `{HNDLR}resume`
+`{HNDLR}stop`
+`{HNDLR}end`
+`{HNDLR}help`
+`{HNDLR}restart`
+
+**EXTRA COMMANDS**
+`{HNDLR}song` - Download Song from Youtube server.
+`{HNDLR}video` - Download Video from Youtube server.
+`{HNDLR}json` - Reply any message & Showing Json.
+"""
+    await m.reply(HELP)
