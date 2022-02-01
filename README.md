@@ -13,7 +13,9 @@ It's made with [PyTgCalls](https://github.com/pytgcalls/pytgcalls) and [Pyrogram
 ## Deployment
 
 ### Heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://telegram.dog/XTZ_HerokuBot?start=bHVzaGFpbXVzaWMvdmMtdXNlcmJvdCBtYXN0ZXI)
+<a href="https://youtu.be/1IFe5wBxOL4"><img src="https://img.shields.io/badge/How%20to%20Deploy%20on%20Heroku-blue.svg?logo=Youtube"></a>
+<a href="https://youtu.be/1IFe5wBxOL4"><img src="https://img.shields.io/youtube/views/1IFe5wBxOL4?style=social"></a>
 
 ### Local Deploy
 1) Installing NodeJS
