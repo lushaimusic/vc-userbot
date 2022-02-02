@@ -87,7 +87,8 @@ async def ytdl(link):
 
 @Client.on_message(filters.command(["play"], prefixes=f"{HNDLR}"))
 async def play(client, m: Message):
-    replied = m.reply_to_message
+ if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
+   replied = m.reply_to_message
     chat_id = m.chat.id
     if replied:
         if replied.audio or replied.voice:
@@ -242,7 +243,8 @@ async def stream(client, m: Message):
 
 @Client.on_message(filters.command(["vplay"], prefixes=f"{HNDLR}"))
 async def vplay(client, m: Message):
-    replied = m.reply_to_message
+ if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
+   replied = m.reply_to_message
     chat_id = m.chat.id
     m.chat.title
     if replied:
@@ -438,7 +440,8 @@ async def vstream(client, m: Message):
 
 @Client.on_message(filters.command(["playfrom"], prefixes=f"{HNDLR}"))
 async def playfrom(client, m: Message):
-    chat_id = m.chat.id
+ if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
+   chat_id = m.chat.id
     if len(m.command) < 2:
         await m.reply(
             f"**Use:** \n\n`{HNDLR}playfrom [chat_id/username]` \n`{HNDLR}playfrom [chat_id/username]`"
@@ -491,7 +494,8 @@ async def playfrom(client, m: Message):
 
 @Client.on_message(filters.command(["playlist", "queue"], prefixes=f"{HNDLR}"))
 async def playlist(client, m: Message):
-    chat_id = m.chat.id
+ if GRPPLAY or (m.from_user and m.from_user.is_contact) or m.outgoing:
+   chat_id = m.chat.id
     if chat_id in QUEUE:
         chat_queue = get_queue(chat_id)
         if len(chat_queue) == 1:
