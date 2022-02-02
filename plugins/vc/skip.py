@@ -7,7 +7,7 @@ from plugins.vc.queues import QUEUE, clear_queue
 
 @Client.on_message(contact_filter & filters.command(['skip'], prefixes=f"{HNDLR}"))
 async def skip(client, m: Message):
-   await m.delete()
+    await m.delete()
     chat_id = m.chat.id
     if len(m.command) < 2:
         op = await skip_current_song(chat_id)
