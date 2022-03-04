@@ -22,7 +22,7 @@
             "required": true
         },
         "HNDLR": {
-            "description": "Handler | Default (!)",
+            "description": "İşləyici | Defolt (!)",
             "value": "!",
             "required": false 
         },
