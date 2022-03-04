@@ -32,7 +32,7 @@ sudo apt-get install youtube-dl -y
 
 3) Cloning the Repo
 ```bash
-git clone https://github.com/lushaimusic/vc-userbot
+git clone https://github.com/AzeMusic/vc-userbot
 cd vc-userbot
 ```
 
