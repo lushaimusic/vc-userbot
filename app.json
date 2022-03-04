@@ -27,7 +27,7 @@
             "required": false 
         },
         "GROUP_MODE": {
-            "description": "Anyone can play, if set to True. Set it to False to restrict play access to Sudo Users/Contacts only",
+            "description": "True olaraq təyin olunarsa, hər kəs oynaya bilər. Yalnız Sudo İstifadəçiləri/Kontaktlar üçün oyun girişini məhdudlaşdırmaq üçün onu False olaraq təyin edin",
             "value": "True",
             "required": true 
         }
