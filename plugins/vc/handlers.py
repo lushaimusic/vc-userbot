@@ -77,7 +77,7 @@ async def on_end_handler(client, update: Update):
       if op==1:
          await bot.send_message(chat_id, "`Queue is Empty, Leaving Voice Chat...`")
       elif op==2:
-         await bot.send_message(chat_id, "**Some Error Occurred** \n`Clearing the Queues and Leaving the Voice Chat...`")
+         await bot.send_message(chat_id, "**Xəta Baş Verdi** \n `Növbələrin Təmizlənməsi və Səsli Söhbətdən Çıxılması...`")
       else:
          await bot.send_message(chat_id, f"**🎧 Now Playing** \n[{op[0]}]({op[1]}) | `{op[2]}`", disable_web_page_preview=True)
    else:
