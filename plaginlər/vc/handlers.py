@@ -84,7 +84,7 @@ async def on_end_handler(client, update: Update):
       pass
 
 
-# When someone ends the Voice Chat without stopping the Playback
+# Kimsə Oxumanı dayandırmadan Səsli Söhbəti bitirdikdə
 
 @call_py.on_closed_voice_chat()
 async def close_handler(client: PyTgCalls, chat_id: int):
