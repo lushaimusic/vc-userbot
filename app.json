@@ -1,16 +1,16 @@
 {
     "name": "vc-userbot",
-    "description": "A Telegram Userbot to play Songs/Videos/Radio/ Live Stream in Voice Chat",
+    "description": "Mahnıları/Videoları/Radioları/Səsli Çatda Canlı Yayımı oynamaq üçün Telegram İstifadəçi Botu ",
     "logo": "https://telegra.ph/file/26effbfca2917f15a9e5e.png",
     "keywords": [
         "Telegram",
         "VCBot",
         "MusicPlayer"
     ],
-    "repository": "https://github.com/lushaimusic/vc-userbot",
+    "repository": "https://github.com/AzeMusic/vc-userbot",
     "env": {
         "SESSION": {
-            "description": "Pyrogram String Session. Get from https://replit.com/@ZauteKm/GenerateStringSession",
+            "description": "Pyrogram String Session",
             "required": true
         },
         "API_ID": {
@@ -22,12 +22,12 @@
             "required": true
         },
         "HNDLR": {
-            "description": "Handler | Default (!)",
+            "description": "İşləyici | Defolt (!)",
             "value": "!",
             "required": false 
         },
         "GROUP_MODE": {
-            "description": "Anyone can play, if set to True. Set it to False to restrict play access to Sudo Users/Contacts only",
+            "description": "True olaraq təyin olunarsa, hər kəs oynaya bilər. Yalnız Sudo İstifadəçiləri/Kontaktlar üçün oyun girişini məhdudlaşdırmaq üçün onu False olaraq təyin edin",
             "value": "True",
             "required": true 
         }

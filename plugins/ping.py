@@ -37,7 +37,7 @@ async def ping(client, m: Message):
    delta_ping = time() - start
    uptime_sec = (current_time - START_TIME).total_seconds()
    uptime = await _human_time_duration(int(uptime_sec))
-   await m_reply.edit(f"`{delta_ping * 1000:.3f} ms` \n**Uptime ⏳** - `{uptime}`")
+   await m_reply.edit(f"`{delta_ping * 1000:.3f} ms` \n**pong🇦🇿🔥** - `{uptime}`")
 
 @Client.on_message(contact_filter & filters.command(['restart'], prefixes=f"{HNDLR}"))
 async def restart(client, m: Message):
@@ -49,29 +49,29 @@ async def restart(client, m: Message):
 @Client.on_message(contact_filter & filters.command(['help'], prefixes=f"{HNDLR}"))
 async def help(client, m: Message):
    HELP = f"""
-**HELP MENU 🛠**
+**Komandalar 🌹**
 
-**USER COMMANDS**
-(Anyone can Use if `GROUP_MODE` is set to `True`):
-`{HNDLR}play`
-`{HNDLR}vplay`
+**User komandalar**
+(İstifadə edilir):
+`{HNDLR}play` (mahnı adı/link)
+`{HNDLR}vplay` (video ad/link)
 `{HNDLR}stream` (For Radio links)
-`{HNDLR}vstream` (For .m3u8 / live links)
-`{HNDLR}playfrom [channel] ; [n]` - Plays last n songs from channel
+`{HNDLR}vstream` (For .m3u8 / radio link)
+`{HNDLR}playfrom [kanal] ; [n]` - kanalda mahnı oxudmaq
 `{HNDLR}playlist` / `{HNDLR}queue`
 
-**SUDO COMMANDS** (Can only be accessed by You and Your Contacts):
-`{HNDLR}ping`
+**SUDO komandalar** 
+`{HNDLR}ping` 
 `{HNDLR}skip`
 `{HNDLR}pause` and `{HNDLR}resume`
-`{HNDLR}stop`
-`{HNDLR}end`
-`{HNDLR}help`
-`{HNDLR}restart`
+`{HNDLR}stop` (saxla)
+`{HNDLR}end` (video chatdan endir)
+`{HNDLR}help` komandalar
+`{HNDLR}restart` yenidən başlat
 
-**EXTRA COMMANDS**
-`{HNDLR}song` - Download Song from Youtube server.
-`{HNDLR}video` - Download Video from Youtube server.
+**EXTRA komandalar**
+`{HNDLR}song` - youtubdən mahnı yuklə.
+`{HNDLR}video` - youtubdən video yuklê
 `{HNDLR}json` - Reply any message & Showing Json.
 """
    await m.reply(HELP)
