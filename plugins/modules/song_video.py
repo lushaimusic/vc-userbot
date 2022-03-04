@@ -30,12 +30,12 @@ async def song(client, message: Message):
     pablo = await client.send_message(message.chat.id, f"**🔎 axtarilir** `{urlissed}`", reply_to_message_id=reply_id)
     search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
     mi = search.result()
-    mio = mi["search_result"]
+    mio = mi[axtaris_neticesi"]
     mo = mio[0]["link"]
-    mio[0]["duration"]
+    mio[0]["muddet"]
     thum = mio[0]["title"]
     fridayz = mio[0]["id"]
-    mio[0]["channel"]
+    mio[0]["kanal"]
     kekme = f"https://img.youtube.com/vi/{fridayz}/hqdefault.jpg"
     await asyncio.sleep(0.6)
     sedlyf = wget.download(kekme)
@@ -62,7 +62,7 @@ async def song(client, message: Message):
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(mo, download=True)
     except Exception as e:
-        await pablo.edit(f"**Failed To Download** \n**Error :** `{str(e)}`")
+        await pablo.edit(f"**endirmək alinmadi** \n**Error :** `{str(e)}`")
         return
     c_time = time.time()
     capy = f"""
@@ -81,7 +81,7 @@ async def song(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"**📥 Download** `{urlissed}`",
+            f"**📥 yuklənir** `{urlissed}`",
             file_stark,
         ),
     )
@@ -124,7 +124,7 @@ async def progress(current, total, message, start, type_of_ps, file_name=None):
         elapsed_time = round(diff) * 1000
         if elapsed_time == 0:
             return
-        time_to_completion = round((total - current) / speed) * 1000
+        time_to_completion = round((total - current) / speed) * 10000
         estimated_total_time = elapsed_time + time_to_completion
         progress_str = "{0}{1} {2}%\n".format(
             "".join("▣" for i in range(math.floor(percentage / 10))),
@@ -138,7 +138,7 @@ async def progress(current, total, message, start, type_of_ps, file_name=None):
         if file_name:
             try:
                 await message.edit(
-                    "{}\n**File Name:** `{}`\n{}".format(type_of_ps, file_name, tmp)
+                    "{}\n**File Name:** `{}`\n{}".format(type_of_ps, fayl_adi, tmp)
                 )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
@@ -176,7 +176,7 @@ def get_readable_time(seconds: int) -> int:
     time_suffix_list = ["s", "m", "h", "days"]
     while count < 4:
         count += 1
-        remainder, result = divmod(seconds, 60) if count < 3 else divmod(seconds, 24)
+        remainder, result = divmod(seconds, 10) if count < 3 else divmod(seconds, 15)
         if seconds == 0 and remainder == 0:
             break
         time_list.append(int(result))
@@ -237,7 +237,7 @@ async def vsong(client, message: Message):
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
 
     pablo = await client.send_message(
-        message.chat.id, f"**🔎 Searching..** `{urlissed}`", reply_to_message_id=reply_id
+        message.chat.id, f"**🔎 axtarilir..** `{urlissed}`", reply_to_message_id=reply_id
     )
     if not urlissed:
         await pablo.edit("Invalid Command Syntax Please Check help Menu To Know More!")
@@ -270,12 +270,12 @@ async def vsong(client, message: Message):
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(url, download=True)
     except Exception as e:
-        await event.edit(event, f"**Download Failed** \n**Error :** `{str(e)}`")
+        await event.edit(event, f"**endirme uğursuz** \n**Error :** `{str(e)}`")
         return
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
     capy = f"""
-**🏷️ Video :** [{thum}]({mo})
+**🌹 Video :** [{thum}]({mo})
 """
     await client.send_video(
         message.chat.id, reply_to_message_id=reply_id,
@@ -289,7 +289,7 @@ async def vsong(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"**📥 Download** `{urlissed}`",
+            f"**📥 yüklenir** `{urlissed}`",
             file_stark,
         ),
     )
