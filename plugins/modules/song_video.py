@@ -24,10 +24,10 @@ async def song(client, message: Message):
     if not urlissed:
         await client.send_message(
             message.chat.id,
-            f"⚠️ Check spelling!\n\nExample: `{HNDLR}song monody`", reply_to_message_id=reply_id
+            f"⚠️ Check spelling!\n\nExample: `{HNDLR}song nazli qizim`", reply_to_message_id=reply_id
         )
         return
-    pablo = await client.send_message(message.chat.id, f"**🔎 Searching** `{urlissed}`", reply_to_message_id=reply_id)
+    pablo = await client.send_message(message.chat.id, f"**🔎 axtarilir** `{urlissed}`", reply_to_message_id=reply_id)
     search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
     mi = search.result()
     mio = mi["search_result"]
@@ -56,7 +56,7 @@ async def song(client, message: Message):
         ],
         "outtmpl": "%(id)s.mp3",
         "quiet": True,
-        "logtostderr": False,
+        "logtostderr": True,
     }
     try:
         with YoutubeDL(opts) as ytdl:
