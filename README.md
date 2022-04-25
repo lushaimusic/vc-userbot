@@ -7,7 +7,7 @@ It's made with [PyTgCalls](https://github.com/pytgcalls/pytgcalls) and [Pyrogram
 - `API_ID`
 - `API_HASH`
 - `SESSION` - A Pyrogram String Session. Get one from [Here](https://replit.com/@ZauteKm/GenerateStringSession)
-- `HNDLR` - Your Userbot Handler (Default is !)
+- `HNDLR` - Your Userbot Handler (Default is /)
 - `GROUP_MODE` - if Value is set to `True`, Anyone can Play. Set it to `False` to restrict play access to Sudo Users/Contacts only.
 
 ## Deployment
@@ -32,7 +32,7 @@ sudo apt-get install youtube-dl -y
 
 3) Cloning the Repo
 ```bash
-git clone https://github.com/lushaimusic/vc-userbot
+git clone https://github.com/sufiansrk10/vc-userbot
 cd vc-userbot
 ```
 
